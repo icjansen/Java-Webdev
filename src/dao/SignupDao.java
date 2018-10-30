@@ -13,7 +13,7 @@ import util.DBConnection;
 public class SignupDao {
 	private static Logger LOGGER = Logger.getLogger(SignupDao.class.getName());
 	
-	public static UserBean createUser(UserBean userBean) throws Exception{
+	public static boolean createUser(UserBean userBean) throws Exception{
 		try {
 			Connection connection = DBConnection.getConnection();
 			System.out.println(connection);
@@ -22,14 +22,14 @@ public class SignupDao {
 			preparedStatement.setString(1,  userBean.getUserName());
 			preparedStatement.setString(2,  userBean.getEmail());
 			preparedStatement.setString(3,  userBean.getPassword());
-			preparedStatement.setString(2,  userBean.getFirstName());
-			preparedStatement.setString(2,  userBean.getLastName());
-			ResultSet resultSet = preparedStatement.executeQuery();
-			
+			preparedStatement.setString(4,  userBean.getFirstName());
+			preparedStatement.setString(5,  userBean.getLastName());
+			preparedStatement.executeUpdate();
+			return true;
 		}catch (SQLException e) {
-			LOGGER.log(Level.WARNING, "Error while logging in" + e.getMessage());
+			LOGGER.log(Level.WARNING, "Error while signing up" + e.getMessage());
+			throw new Exception("Error while signing in.");
 		}
-		throw new Exception("Error while logging in.");
 	}
 	
 }
