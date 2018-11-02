@@ -41,6 +41,7 @@ public class SignupServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
+		//na het verzenden van het ingevulde formulier worden de waarden uit dit formulier in userBean gezet
 		UserBean userBean = new UserBean();
 		userBean.setUserName(request.getParameter("username"));
 		userBean.setEmail(request.getParameter("email"));
@@ -49,6 +50,7 @@ public class SignupServlet extends HttpServlet {
 		userBean.setLastName(request.getParameter("lastname"));
 		
 		try {
+			//de gebruiker wordt gemaakt en meteen in de sessie gezet, daarna wordt de gebruiker doorgestuurd naar de index
 			boolean result = SignupDao.createUser(userBean);
 			System.out.println(result);
 			HttpSession session = ((HttpServletRequest) request).getSession(true);

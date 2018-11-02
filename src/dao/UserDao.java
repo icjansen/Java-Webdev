@@ -1,5 +1,8 @@
 package dao;
 
+
+//hoort bij de AdminServlet die nog niet in gebruik is
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

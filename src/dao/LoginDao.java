@@ -19,12 +19,14 @@ public class LoginDao {
 		try {
 			Connection connection = DBConnection.getConnection();
 			System.out.println(connection);
+			//alle data die bij het ingevoerde emailadres horen worden opgehaald
 			String query = "SELECT username, email, password FROM user WHERE email = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, loginBean.getEmail());
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
+				//hier worden het ingevoerde wachtwoord en het wachtwoord uit de database vergeleken, als deze overeenkomen wordt de gebruikersnaam in userBean gezet
 				if (loginBean.getPassword().equals(resultSet.getString("password"))) {
 					UserBean userBean = new UserBean();
 					userBean.setUserName(resultSet.getString("username"));

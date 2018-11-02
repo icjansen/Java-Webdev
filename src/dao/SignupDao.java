@@ -19,6 +19,7 @@ public class SignupDao {
 			System.out.println(connection);
 			String query = "INSERT INTO user (username, email, password, firstname, lastname) VALUES (?, ?, ?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(query);
+			//de waarden die door de servlet in userBean worden gestopt worden hier opgehaald om ze in de database te kunnen zetten
 			preparedStatement.setString(1,  userBean.getUserName());
 			preparedStatement.setString(2,  userBean.getEmail());
 			preparedStatement.setString(3,  userBean.getPassword());

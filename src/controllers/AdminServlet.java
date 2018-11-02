@@ -18,6 +18,8 @@ import dao.UserDao;
 import util.DBConnection;
 
 
+//we waren er nog niet aan toegekomen om een admin-page te maken, deze servlet is op dit moment dus nog nutteloos
+
 /**
  * Servlet implementation class AdminServlet
  */

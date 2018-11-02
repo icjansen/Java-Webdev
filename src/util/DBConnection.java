@@ -10,7 +10,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-
+//maakt de databaseconnectie
 
 public class DBConnection {
 
