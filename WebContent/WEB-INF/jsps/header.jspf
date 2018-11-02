@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Homepage</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -13,3 +13,24 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
+<style>
+input{
+width: 100%;
+}
+</style>
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="/Java-Webdev/index.jsp">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Java-Webdev/login">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Java-Webdev/signup">Sign up</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./logout">Logout</a>
+    </li>
+  </ul>
+</nav>
